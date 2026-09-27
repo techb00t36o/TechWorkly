@@ -69,9 +69,12 @@ import { DisputeProvider } from './context/DisputeContext.jsx'
 import { AdminProvider } from './context/AdminContext.jsx'
 import { SupportProvider } from './context/SupportContext.jsx'
 
+// Base path for GitHub Pages project site (/TechWorkly/); plain "/" in local dev.
+const routerBasename = import.meta.env.BASE_URL.replace(/\/+$/, '') || '/'
+
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={routerBasename}>
       <JobProvider>
         <GigProvider>
         <ContractProvider>
